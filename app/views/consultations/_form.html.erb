@@ -1,0 +1,21 @@
+<%= form_for(@consultation) do |f| %>
+  <% if @consultation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@consultation.errors.count, "error") %> prohibited this consultation from being saved:</h2>
+
+      <ul>
+      <% @consultation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :doctor_id %><br>
+    <%= f.text_field :doctor_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
